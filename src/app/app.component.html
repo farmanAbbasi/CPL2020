@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center;background-color: #eee">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <p>{{dateAndTime}}</p>
+
+</div>
+<p>Todays Challenge</p>
+<div *ngIf="!datesCrossed"  class="grid-container3" style="text-align:center">
+  <div class="left">
+    <p>{{teamAinCode}}</p>
+    <img src={{imagePathA}}>
+  </div>
+
+  <div class="right">
+    <p>{{teamBinCode}} </p>
+    <img src={{imagePathB}}>
+
+  </div>
+</div>
+
+  <div *ngIf="datesCrossed">
+    <div *ngFor="let image of allImagesArray;let i = index">
+      <img src={{image}} style="margin: 20px;"><p>{{teams[keys[i]]}}</p>
+    </div>
+
+  </div>
+
+
+
+<router-outlet></router-outlet>
